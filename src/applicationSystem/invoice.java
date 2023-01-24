@@ -17,13 +17,7 @@ public class invoice implements Serializable {
 	 double balance;
 	 
 	 public void SetinvoiceHeader() {
-		 
-		  System.out.println("\t\t\t\t--------------------Invoice-----------------");    
-	        System.out.println("FAX: 03AWBPP8756K592"+" \t\t\t\t\t\t\t  TEL: 96677030"); 
-	        System.out.println("\t\t\t\t Email :shop@icloud.com "); 
-	        System.out.println("\t\t\t\t Website:www.shop.com "); 
-		 
-	 }
+		  }
 	 
 	 
 	
@@ -39,7 +33,8 @@ public void Newinvoice() {
 	  
 	   System.out.print("Enter Shop Name : ");
 	   shop1.setName(sc.next());
-	   
+	   boolean choice = true;
+	   while (choice) {
 	   Item item1 = new Item();
 	   System.out.print("Enter Item Name : ");
 	   item1.setItemName(sc.next());
@@ -51,16 +46,19 @@ public void Newinvoice() {
 	   item1.setQuantity(sc.nextDouble());
 	   System.out.print("Enter quantityPrice : ");
 	   item1.setQuantityPrice(sc.nextDouble());
-
 	   
-    
+	   System.out.println("\"Want to add more items? 1 if yes : \"");
+		if (sc.nextInt() != 1) {
+			choice = false;
+	   }
+	   }
   	// Serializaion
 	   try{
 	       FileOutputStream file = new FileOutputStream("invoice.txt");
 	       ObjectOutputStream out = new ObjectOutputStream(file);
 	       out.writeObject(customerName);
 	       out.writeObject(customerphonenumber);
-	      
+	       out.writeObject(shop1);
 	       out.close();
 	       file.close();
 	       System.out.println("serialized and saved");
@@ -69,21 +67,7 @@ public void Newinvoice() {
 	   }
 	//--------------------------------------------------------
 	
-	   try{
-	       FileOutputStream file = new FileOutputStream("Shop.txt");
-	       ObjectOutputStream out = new ObjectOutputStream(file);
-	       out.writeObject(shop1);
-	    
-	       out.close();
-	       file.close();
-	       System.out.println("serialized and saved");
-	   }catch (Exception e){
-	     e.printStackTrace();
-	   }
 	   
-	 //--------------------------------------------------------
-	   
-	
 	   
 }
 

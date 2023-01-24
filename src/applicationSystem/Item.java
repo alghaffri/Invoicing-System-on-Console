@@ -1,6 +1,8 @@
 package applicationSystem;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable{
 
 	private String itemName;
 	private double  itemId;
@@ -53,7 +55,7 @@ public class Item {
 	public static void displayFormat()   
        {  
            System.out.format("-----------------------------------------------------------------------------------------------------------------------------------");  
-           System.out.print("\n itemName \t \titemId \t \tunitPrice \t \t quantity \t \t quantityPrice \n");  
+           System.out.print("\n item Name \t \t item Id \t \t unit Price \t \t quantity \t \t quantity Price \n");  
            System.out.format("-----------------------------------------------------------------------------------------------------------------------------------\n");  
        }  
           

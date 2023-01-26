@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class Item implements Serializable{
 
-	private String itemName;
-	private double  itemId;
-	private double unitPrice;
-	private double quantity;
-	private double quantityPrice;
+	 String itemName;
+	 double  itemId;
+ double unitPrice;
+	 double quantity;
+	 double quantityPrice;
 
 	
 	
@@ -52,21 +52,5 @@ public class Item implements Serializable{
 		this.quantityPrice = quantityPrice;
 	}
 
-	public static void displayFormat()   
-       {  
-           System.out.format("-----------------------------------------------------------------------------------------------------------------------------------");  
-           System.out.print("\n item Name \t \t item Id \t \t unit Price \t \t quantity \t \t quantity Price \n");  
-           System.out.format("-----------------------------------------------------------------------------------------------------------------------------------\n");  
-       }  
-          
-       // display 
-	   
-       public void display()   
-       {  
-         
-		System.out.format("" ,itemName, itemId, unitPrice, quantity, quantityPrice);  
-     
 	
-	
-}
 }
